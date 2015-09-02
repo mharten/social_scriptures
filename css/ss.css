@@ -1,0 +1,16 @@
+iframe {
+	border: 1px solid #e7e7e7;
+	border-radius: 4px;
+	height:75vh;
+	overflow: hidden;
+}
+
+.content {
+	margin:0px;
+	padding: 5px;
+
+}
+
+#context-bar {
+	display: none;
+}
