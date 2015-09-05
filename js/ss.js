@@ -8,23 +8,20 @@ myApp.controller('RegisterCtrl', ['$scope', '$http', function(scope, $http){
 	scope.password = "Password";
 
 	scope.postResponse = function () {
-		var postData = {
-			email : scope.email,
-			firstName : scope.firstName,
-			lastName : scope.lastName,
-			userName : scope.username,
-			password : scope.password
-		};
+	    var postData = JSON.stringify({
+		"email" : scope.email,
+		"firstName" : scope.firstName,
+		"lastName" : scope.lastName,
+		"userName" : scope.username,
+		"password" : scope.password
+	    });
 
-		console.log("postData: ", postData);
-		$http.post('php/register.php', postData).then(function(response) {
-			console.log("GEE WILKERS BATMAN THEY SAID: ", response.data);
-		}, function(response) {
-
-		});
+	    $http.post('php/register.php', postData).then(function(response) {
+		console.log("RESPONSE.DATA: ", response.data);
+	    }, function(response) {
+		console.log("ERROR RESPONSE: ", response);
+	    });
 	}
-
-
 }]);
 
 myApp.controller('ScriptureCtrl', ['$scope', function(scope) {

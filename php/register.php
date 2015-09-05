@@ -1,11 +1,14 @@
 <?
-$json = '[{
-			"lastName":"'.$_POST['lastName'].'",
-			"firstName":"'.$_POST['firstName'].'",
-			"email":"'.$_POST['email'].'",
-			"username":"'.$_POST['username'].'",
-			"password":"'.$_POST['password'].'"
-		}]';
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+$email = $request->email;
+$lastName = $request->lastName;
+$firstName = $request->firstName;
+$password = $request->password;
+$username = $request->userName;
 
-echo json_encode($json);
+
+$json = '{"lastName":"'.$lastName.'","firstName":"'.$firstName.'","email":"'.$email.'","username":"'.$username.'","password":"'.$password.'"}';
+echo $_POST['username'];
+echo ($json);
 ?>
