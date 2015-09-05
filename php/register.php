@@ -1,19 +1,11 @@
 <?
 $json = '[{
-			"username":"'.$_POST['lastName'].'",
-			"password":"'.$_POST['firstName'].'",
-			"password":"'.$_POST['email'].'",
-			"password":"'.$_POST['username'].'",
+			"lastName":"'.$_POST['lastName'].'",
+			"firstName":"'.$_POST['firstName'].'",
+			"email":"'.$_POST['email'].'",
+			"username":"'.$_POST['username'].'",
 			"password":"'.$_POST['password'].'"
 		}]';
 
 echo json_encode($json);
 ?>
-
-user_id
-lastName
-firstName
-email
-creationDate
-username
-password
