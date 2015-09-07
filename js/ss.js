@@ -1,7 +1,7 @@
 var myApp = angular.module('SocialScriptureApp',[]);
 
 myApp.controller('RegisterCtrl', ['$scope', '$http', function(scope, $http){
-	scope.email = "junk@junk.com";
+	scope.email = "stuff@stuff.com";
 	scope.firstName = "First Name";
 	scope.lastName = "Last Name";
 	scope.username = "Username";

@@ -7,8 +7,23 @@ $firstName = $request->firstName;
 $password = $request->password;
 $username = $request->userName;
 
+$sql= "INSERT INTO Users " .
+      "(lastName, firstName, email, username, password) " .
+      "VALUES ('" .$lastName. "', '" .$firstName. "', '" .$email. "', '$username', SHA1('" .$password. "\
+'))";
+$result = mysql_query($sql, $link);
 
-$json = '{"lastName":"'.$lastName.'","firstName":"'.$firstName.'","email":"'.$email.'","username":"'.$username.'","password":"'.$password.'"}';
-echo $_POST['username'];
-echo ($json);
+if (!$result) {
+    echo "DB Error, could not query the database\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
+}
+
+while ($row = mysql_fetch_assoc($result)) {
+    echo $row['user_id'];
+}
+
+mysql_free_result($result);
+
+
 ?>
