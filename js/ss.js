@@ -16,7 +16,7 @@ myApp.controller('RegisterCtrl', ['$scope', '$http', function(scope, $http){
 		"password" : scope.password
 	    });
 
-	    $http.post('php/register.php', postData).then(function(response) {
+	    $http.post('php/session.php', postData).then(function(response) {
 		console.log("RESPONSE.DATA: ", response.data);
 	    }, function(response) {
 		console.log("ERROR RESPONSE: ", response);
