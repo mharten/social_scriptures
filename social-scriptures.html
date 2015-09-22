@@ -9,7 +9,11 @@
 
 	</head>
 	<body>
-
+		<script>
+		$.post("php/DBAccess.php", function(response){
+        alert(response);
+    });
+		</script>
 		<!-- <ng-include src="main.html"></ng-include> -->
 	
 	</body>
