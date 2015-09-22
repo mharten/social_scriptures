@@ -1,5 +1,5 @@
 iframe {
-	border: 1px solid #e7e7e7;
+	border: 10px solid red;
 	border-radius: 4px;
 	height:75vh;
 	overflow: hidden;
@@ -13,4 +13,8 @@ iframe {
 
 #context-bar {
 	display: none;
+}
+
+.red {
+	border-color: 1px solid #aa0000;
 }
