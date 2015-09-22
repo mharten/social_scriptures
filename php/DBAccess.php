@@ -10,9 +10,10 @@ class DBAccess
 	
 }
 
-echo "We have PDO: " . class_exists(PDO) . "?";
-echo "We have mysql: " . function_exists(mysql_connect) . "?";
-echo "We have mysqli: " . class_exists(mysqli) . "?";
+echo "We have PDO: " . class_exists(PDO) . "?<br>";
+echo "We have mysql: " . function_exists(mysql_connect) . "?<br>";
+echo "We have mysqli: " . class_exists(mysqli) . "?<br>";
+echo "We have money: " . function_exists(monetuisxeuf) . "?<br>";
 
 
 
