@@ -1,13 +1,46 @@
 <?
 class DBAccess
 {
-	protected $connection;
+	protected $connection = null;
+	protected $host = "localhost";
+	protected $database = "social_scriptures";
+	protected $user = "php";
+	protected $password = "php-pass";
 	
 	public function connect()
 	{
-		$this->connection = mysql_connect('localhost', 'php', 'php-pass');
+		try
+		{
+			$this->connection = new PDO("mysql:host=$host;database=$dbname", $user, $password);
+			
+			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		}
+		catch (PDOException $e)
+		{
+			echo "DB Error, could not connect to the database\n" . 
+			     "MySQL Error: " . $e->getMessage();
+		}
 	}
 	
+	public function insert($table_name, array $values)
+	{
+		$prepared_statement = "INSERT INTO " . $table_name;
+		try
+		{
+			$statement = $this->connection->prepare("INSERT INTO " . $table_name . " ( first_name ) values ( 'Cathy' )");
+			$statement->execute();
+		}
+		catch (PDOException $e)
+		{
+			echo "DB Error, could not insert into to the database\n" . 
+			     "MySQL Error: " . $e->getMessage();
+		}
+	}
+
+	public function close()
+	{
+		$connection = null;
+	}
 }
 
 echo "We have PDO: " . class_exists(PDO) . "?<br>";
